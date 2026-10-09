@@ -1,17 +1,13 @@
-frases = ["Beba água durante o dia.", "Organize seus horários de estudo.",
-    "Durma bem antes de uma prova.", "Faça pausas curtas entre as atividades."]
+const frases = [
+    "Beba água durante o dia.",
+    "Organize seus horários de estudo.",
+    "Durma bem antes de uma prova.",
+    "Faça pausas entre as atividades."
+];
 
-let i = -1
+let indice = -1;
 
-function gerar() {
-
-    i += 1
-
-    console.log(i)
-    if (i >= 4) {
-        i = 0
-    }
-
-    document.getElementById('frases').innerHTML = frases[i]
-
-}
+document.getElementById("botao-frase").addEventListener("click", function() {
+    indice = (indice + 1) % frases.length;
+    document.getElementById("frases").textContent = frases[indice];
+});
